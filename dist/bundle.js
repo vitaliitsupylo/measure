@@ -70,8 +70,43 @@
 "use strict";
 
 
-console.log(11);
-var o = Math.pow(5, 5);
+(function () {
+    'use strict';
+
+    window._m = function (domElem) {
+
+        var arrElem = document.querySelectorAll(domElem);
+
+        return {
+            event: function event() {
+                var _iteratorNormalCompletion = true;
+                var _didIteratorError = false;
+                var _iteratorError = undefined;
+
+                try {
+                    for (var _iterator = arrElem[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                        var el = _step.value;
+
+                        console.log(el);
+                    }
+                } catch (err) {
+                    _didIteratorError = true;
+                    _iteratorError = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion && _iterator.return) {
+                            _iterator.return();
+                        }
+                    } finally {
+                        if (_didIteratorError) {
+                            throw _iteratorError;
+                        }
+                    }
+                }
+            }
+        };
+    };
+})();
 
 /***/ })
 /******/ ]);
